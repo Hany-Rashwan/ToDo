@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 //import { ReactiveVar } from 'meteor/reactive-var';
 
-import '../imports/body.js';
+import '../imports/ui/body.js';
 
 
   // counter starts at 0

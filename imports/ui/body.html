@@ -1,0 +1,57 @@
+<body>
+
+   <h1>To DO Tasks</h1>
+
+     <div class="container">
+	      <header>
+	        <h1>Todo List</h1>
+
+           <label class="hide-completed">
+            <input type="checkbox" /> Hide Completed Tasks
+          </label>
+	        
+          <form class="new-task">
+	         <input type="text" name="text" placeholder="Type to add new tasks" />
+	        </form>
+	      </header>
+
+
+        <ul>
+         {{> task}}
+        
+        </ul>
+     </div>
+
+</body>
+
+
+
+
+<template name="task">
+   <ul>
+      {{#each tasks}}
+        {{ > taskbytask}}
+      {{/each}}
+    </ul>
+</template>
+
+
+<template name="taskbytask">
+  
+    <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">{{>childtask}}</span>
+ 
+
+  </li>
+</template>
+
+
+<template name="childtask">
+
+   {{text}}
+
+</template>
